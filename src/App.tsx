@@ -14,8 +14,7 @@ import Contact_Us from "./components/Contact_Us";
 import Socials from "./components/Socials";
 import About_Us from "./components/About_Us";
 import Dashboard from "./components/Dashboard";
-import AdminForm from "./components/AdminForm";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { handleChangeTheme } from "./utils";
 import Portfolio from "./components/Portfolio";
 
@@ -31,7 +30,7 @@ function App() {
   );
   // Test--
 
-  const [inMobileSize, setIsInMobileSize] = useState(window.innerWidth < 992);
+  const [inMobileSize] = useState(window.innerWidth < 992);
 
   const headerRef = useRef<HTMLDivElement>(null);
 

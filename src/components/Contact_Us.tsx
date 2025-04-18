@@ -281,10 +281,10 @@ const Contact_Us = () => {
             name="masseage"
             id="massage-area"
             placeholder={t("form.placeholder.massege")}
-            cols="30"
-            rows="6"
-            minlength="10"
-            maxlength="500"
+            cols={30}
+            rows={30}
+            minLength={10}
+            maxLength={500}
             required
           ></textarea>
         </div>

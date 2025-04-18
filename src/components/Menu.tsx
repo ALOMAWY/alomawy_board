@@ -12,6 +12,7 @@ import {
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { handleChangeLang, handleChangeTheme } from "../utils";
+import { getItemFromLocalStorage } from "../utils/localStorage";
 
 const Styled_Menu = styled.div`
   width: 100vw;
@@ -82,7 +83,14 @@ const Menu = () => {
         <ul>
           <Navigation_Button
             className="translate-x-l-1"
-            onClick={() => handleChangeTheme()}
+            onClick={() => {
+              const currentColor = getItemFromLocalStorage(
+                "theme-color",
+                "blue"
+              );
+
+              handleChangeTheme(currentColor);
+            }}
           >
             <button>
               <FontAwesomeIcon icon={faBrush} />

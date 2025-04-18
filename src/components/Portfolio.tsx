@@ -1,4 +1,4 @@
-import { collection, DocumentData, getDocs } from "firebase/firestore";
+import { collection,  getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
@@ -22,7 +22,7 @@ const Portfolio = () => {
 
       const data: ProjectData[] = [];
 
-      quarySnapshot.forEach((e) => data.push(e.data()));
+      quarySnapshot.forEach((e) => data.push(e.data() as ProjectData));
 
       setProjects(data);
     } catch (error) {

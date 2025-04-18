@@ -7,20 +7,12 @@ import {
   faLanguage,
   faPen,
   faPenToSquare,
-  faServer,
   faSignature,
   faStar,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  addDoc,
-  collection,
-  DocumentData,
-  DocumentSnapshot,
-  getDocs,
-  QueryDocumentSnapshot,
-} from "firebase/firestore";
-import React, { useEffect, useState } from "react";
+import { addDoc, collection } from "firebase/firestore";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import { db } from "../lib/firebase";
@@ -152,29 +144,8 @@ const Styled_Form = styled.form`
 
 const Dashboard = () => {
   const { t } = useTranslation();
-  const [image, setImage] = useState<{ file: null | File; url: unknown }>({
-    file: null,
-    url: "",
-  });
 
-  const [loading, setLoading] = useState(false);
-
-  const handleImage = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      try {
-        const imageURL = await upload(file);
-
-        setImage({
-          file: file,
-          url: imageURL,
-        });
-      } catch (error) {
-        console.error(error);
-      }
-    }
-  };
-
+  const languages = ["arabic", "english"];
   const technologies = [
     "html",
     "css",
@@ -199,12 +170,15 @@ const Dashboard = () => {
     "zustand",
   ];
 
-  const languages = ["arabic", "english"];
-
+  const [loading, setLoading] = useState(false);
   const [range, setRange] = useState("0");
   const [type, setType] = useState("website");
   const [techs, setTechs] = useState<string[]>(["html", "css", "javascript"]);
   const [langs, setLangs] = useState<string[]>(["english"]);
+  const [image, setImage] = useState<{ file: null | File; url: "" | string }>({
+    file: null,
+    url: "",
+  });
 
   const [projectData, setProjectData] = useState({
     title: "",
@@ -218,6 +192,22 @@ const Dashboard = () => {
     techs,
     type,
   });
+
+  const handleImage = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      try {
+        const imageURL = await upload(file);
+
+        setImage({
+          file: file,
+          url: imageURL as string,
+        });
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -255,21 +245,17 @@ const Dashboard = () => {
     }));
   };
 
-  const handleRange = (e) => {
+  const handleRange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setRange(e.target.value);
 
     setProjectData((prev) => ({ ...prev, rate: range }));
   };
 
-  useEffect(() => {
-    console.log(projectData);
-  });
-
   const handleAdd = async (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const docRef = await addDoc(collection(db, "projects"), {
+      await addDoc(collection(db, "projects"), {
         ...projectData,
       });
     } catch (error) {
@@ -685,7 +671,7 @@ const Dashboard = () => {
             </span>
           </label>
           <img
-            src={image.url || "./template_images/degital-graphy.png"}
+            src={image.url}
             alt="Image"
             style={{ width: "200px", height: "100px" }}
           />
