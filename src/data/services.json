@@ -1,0 +1,42 @@
+[
+  {
+    "service": "first_service",
+    "explain": "first_example",
+    "icon": "faShieldHalved"
+  },
+  {
+    "service": "second_service",
+    "explain": "second_example",
+    "icon": "faCode"
+  },
+  {
+    "service": "third_service",
+    "explain": "third_example",
+    "icon": "faFire"
+  },
+  {
+    "service": "fourth_service",
+    "explain": "fourth_example",
+    "icon": "faDesktop"
+  },
+  {
+    "service": "fifth_service",
+    "explain": "fifth_example",
+    "icon": "faCircleDollarToSlot"
+  },
+  {
+    "service": "sixth_service",
+    "explain": "sixth_example",
+    "icon": "faBrush"
+  },
+  {
+    "service": "seventh_service",
+    "explain": "seventh_example",
+    "icon": "faPersonBreastfeeding"
+  },
+  {
+    "service": "eighth_service",
+    "explain": "eighth_example",
+    "icon": "faServer"
+  }
+]

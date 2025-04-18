@@ -1,0 +1,86 @@
+html {
+  scroll-behavior: smooth;
+  font-size: 20px;
+}
+:root {
+  --main-color: #186ca4;
+  --secondary-color: #fff;
+  --background-main-color: rgba(30, 57, 103, 0.5);
+  --background-white-color: rgba(255, 255, 255, 0.5);
+  --background-color: #000f18;
+}
+* {
+  transition: 0.3s;
+  padding: 0px;
+  margin: 0px;
+  border: none;
+  outline: none;
+  list-style: none;
+  /* color: var(--main-color); */
+  font-weight: normal;
+  text-transform: capitalize;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-size: 0.9rem;
+}
+body {
+  background-image: url(./backgrounds/Background_blue.png);
+  /* background-size: 100%; */
+  background-position: 72.2%;
+  background-attachment: fixed;
+  margin: 0px;
+  font-weight: 700;
+  overflow-x: hidden;
+  position: relative;
+  animation: background-scroll 1000s linear infinite forwards;
+  font-family: "Anta", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  user-select: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+a {
+  color: var(--secondary-color);
+}
+
+::placeholder {
+  opacity: 0.6;
+}
+
+/* Scroller  */
+/* Width and height of the scrollbar */
+div::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+/* Track (background of the scrollbar) */
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+/* Handle (draggable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+  border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--background-main-color);
+}
+
+/* Scroller  */

@@ -1,0 +1,154 @@
+{
+  "sections": {
+    "home": "Home",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact_us": "Contect Us",
+    "about_us": "About Us",
+    "social_media": "Social Media"
+  },
+  "info": {
+    "welcome": "Hello Everyone",
+    "discription": {
+      "name": "I am Abdalrahman ALDABBAS.",
+      "work": "I work as a front-end developer.",
+      "from": "I am From Syria Damascus.",
+      "website": "This Is A Simple Personal Website .",
+      "technoloji": "I developed this website using ReactJS."
+    },
+    "numbers": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+    "fullname": "Abdalrahman ALDABBAS",
+    "loading": "loading..."
+  },
+  "path": {
+    "home": "Home",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact_us": "Contect Us",
+    "about_us": "About Us",
+    "social_media": "Social Media",
+    "dash": "Admin-Dashboard"
+  },
+  "services": {
+    "items": {
+      "first_service": "Clean Code",
+      "first_example": "It is used to improve performance It also allows for ease of modification in the future",
+
+      "second_service": "Web Development",
+      "second_example": "Developing large and small websites using modern technologies and a dynamic manner",
+
+      "third_service": "Performance Application",
+      "third_example": "Ensuring the best possible performance",
+
+      "fourth_service": "Responsive Design",
+      "fourth_example": "It works on all screens such as computers, tablets, mobile phones, and TV's",
+
+      "fifth_service": "Offers",
+      "fifth_example": "Offers continue throughout the year Depending on the type of service",
+
+      "sixth_service": "Web Design",
+      "sixth_example": "Modern website designs with some tips Easy to browse with users",
+
+      "seventh_service": "Customers Service",
+      "seventh_example": "We respond to requests we receive as quickly as possible",
+
+      "eighth_service": "Upload To Server",
+      "eighth_example": "Uploading websites online at low cost He often has offers"
+    }
+  },
+  "form": {
+    "placeholder": {
+      "name": "Username",
+      "email": "Email",
+      "massege": "Your Massage .."
+    },
+    "send": "Send Massege"
+  },
+  "socials": {
+    "items": {
+      "first_social": "Facebook",
+      "first_content": "Programming",
+      "first_posts": "0",
+
+      "second_social": "Instagram",
+      "second_content": "Programming",
+      "second_posts": "5",
+
+      "third_social": "Linkedin",
+      "third_content": "Programming",
+      "third_posts": "0",
+
+      "fourth_social": "YouTube",
+      "fourth_content": "Programming",
+      "fourth_posts": "0",
+
+      "fifth_social": "GitHub",
+      "fifth_content": "Programming",
+      "fifth_posts": "0",
+
+      "sixth_social": "WhatsApp",
+      "sixth_content": "Programming",
+      "sixth_posts": "0",
+
+      "seventh_social": "Twitter",
+      "seventh_content": "Programming",
+      "seventh_posts": "0",
+
+      "eighth_social": "Reddit",
+      "eighth_content": "Programming",
+      "eighth_posts": "2"
+    },
+    "username": "Username",
+    "posts": "Posts",
+    "friends": "Friends",
+    "followers": "Followers",
+    "content": "Content",
+    "visit": "Visit"
+  },
+  "about": {
+    "fullname": "Full Name :",
+    "age": "Age :",
+    "status": "Status : ",
+    "status_now": "Available To Work",
+    "marital_status": "Marital Status :",
+    "marital_status_now": "Single",
+    "work": "My Work :",
+    "work_now": "Front-End-Developer",
+    "position": "Position :",
+    "position_now": "Jonior",
+    "exp": "Experiance :",
+    "skills": "Skills :",
+    "years": "Years",
+    "months": "Months",
+    "days": "Days"
+  },
+  "dashboard": {
+    "projectName": "Project Title :",
+    "developerName": "Developer Name :",
+    "technologies": "Technologies :",
+    "languages": "Languages :",
+    "idea_source": "Idea Source :",
+    "rate": "Rate (1 - 5) :",
+    "visit_link": "Visit Link :",
+    "disc": "Discription :",
+    "select_image_here": "Select Image Here",
+    "add": "Add Project"
+  },
+  "admin": {
+    "placeholder": {
+      "email": "Email :",
+      "pass": "Password :"
+    },
+    "sign": "Sign, Im Admin",
+    "ask": "Are You Admin ? "
+  },
+  "portfolio": {
+    "developer": "Developer :",
+    "source": "Idea Source :",
+    "type": "Type :",
+    "disc": "Discription :",
+    "techs": "Technologies :",
+    "langs": "Languages :",
+    "rate": "Rate :"
+  }
+}

@@ -1,0 +1,147 @@
+[
+  {
+    "status": "active",
+    "appName": "first_social",
+    "color": {
+      "type": "white",
+      "color": "#0081ea"
+    },
+    "content": "first_content",
+    "logo": "./social-media-logos/facebook.webp",
+    "userName": "Abdalrahman ALDABBAS",
+    "posts": "first_posts",
+    "people": {
+      "type": "friends",
+      "friends": "3",
+      "followers": "20"
+    },
+    "link": "https://www.facebook.com/profile.php?id=100082501930282"
+  },
+  {
+    "status": "active",
+    "appName": "second_social",
+    "color": {
+      "type": "white",
+      "color": "#e90a54"
+    },
+    "content": "second_content",
+    "logo": "./social-media-logos/instagram.webp",
+    "userName": "Abdalrahman ALDABBAS",
+    "posts": "second_posts",
+    "people": {
+      "type": "followers",
+      "friends": "3",
+      "followers": "20"
+    },
+    "link": "https://www.instagram.com/alomawy.code.99/"
+  },
+  {
+    "status": "active",
+    "appName": "third_social",
+    "color": {
+      "type": "white",
+      "color": "#176cad"
+    },
+    "content": "third_content",
+    "logo": "./social-media-logos/linkedin.webp",
+    "userName": "abdalrahman aldabbas",
+    "posts": "third_posts",
+    "people": {
+      "type": "followers",
+      "friends": "3",
+      "followers": "20"
+    },
+    "link": "https://www.linkedin.com/in/abdalrahman-aldabbas-50a7a4242/"
+  },
+  {
+    "status": "active",
+    "appName": "fourth_social",
+    "color": {
+      "type": "white",
+      "color": "#cd201f"
+    },
+    "followers": "80",
+    "content": "fourth_content",
+    "logo": "./social-media-logos/youtube.webp",
+    "userName": "@alomawy.code.99",
+    "posts": "fourth_posts",
+    "people": {
+      "type": "followers",
+      "friends": "3",
+      "followers": "20"
+    },
+    "link": "https://www.youtube.com/@alomawy.code.99"
+  },
+  {
+    "status": "active",
+    "appName": "fifth_social",
+    "color": {
+      "type": "dark",
+      "color": "#181616"
+    },
+    "content": "fifth_content",
+    "logo": "./social-media-logos/github.webp",
+    "userName": "alomawy.code.99",
+    "posts": "fifth_posts",
+    "people": {
+      "type": "followers",
+      "friends": "3",
+      "followers": "20"
+    },
+    "link": "https://github.com/ALOMAWY"
+  },
+  {
+    "status": "active",
+    "appName": "sixth_social",
+    "color": {
+      "type": "white",
+      "color": "#36b05e"
+    },
+    "content": "sixth_content",
+    "logo": "./social-media-logos/whatsapp.webp",
+    "userName": "alomawy.code.99",
+    "posts": "sixth_posts",
+    "people": {
+      "type": "followers",
+      "friends": "3",
+      "followers": "20"
+    },
+    "link": "https://wa.me/+9005526427352"
+  },
+  {
+    "status": "active",
+    "appName": "seventh_social",
+    "color": {
+      "type": "white",
+      "color": "#00a7ec"
+    },
+    "content": "seventh_content",
+    "logo": "./social-media-logos/twitter.webp",
+    "userName": "@alomawy_code_99",
+    "posts": "seventh_posts",
+    "people": {
+      "type": "followers",
+      "friends": "3",
+      "followers": "20"
+    },
+    "link": "https://twitter.com/alomawy_code_99"
+  },
+  {
+    "status": "active",
+    "appName": "eighth_social",
+    "color": {
+      "type": "white",
+      "color": "#ff3725"
+    },
+    "content": "eighth_content",
+    "logo": "./social-media-logos/reddit.png",
+    "userName": "@alomawy_code_99",
+    "posts": "eighth_posts",
+    "people": {
+      "type": "friends",
+      "friends": "3",
+      "followers": "20"
+    },
+    "link": "https://www.reddit.com/user/abdalrahman_ds/"
+  }
+]

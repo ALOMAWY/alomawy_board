@@ -1,0 +1,154 @@
+{
+  "sections": {
+    "home": "الرئيسية",
+    "services": "الخدمات",
+    "portfolio": "المعرض",
+    "contact_us": "اتصل بنا",
+    "about_us": "معلومات عنا",
+    "social_media": "وسائل التواصل"
+  },
+  "info": {
+    "welcome": "مرحباً بالجميع",
+    "discription": {
+      "name": "أنا عبد الرحمن الدباس.",
+      "work": "أعمل كمطور واجهات أمامية.",
+      "from": "أنا من سوريا - دمشق.",
+      "website": "هذا موقع شخصي بسيط.",
+      "technoloji": "قمت بتطوير هذا الموقع باستخدام ReactJS."
+    },
+    "numbers": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+    "fullname": "عبد الرحمن الدباس",
+    "loading": "جاري التحميل..."
+  },
+  "path": {
+    "home": "الرئيسية",
+    "services": "الخدمات",
+    "portfolio": "المعرض",
+    "contact_us": "اتصل بنا",
+    "about_us": "معلومات عنا",
+    "social_media": "وسائل التواصل",
+    "dash": "لوحة التحكم"
+  },
+  "services": {
+    "items": {
+      "first_service": "كود نظيف",
+      "first_example": "يُستخدم لتحسين الأداء كما يسمح بسهولة التعديل في المستقبل",
+
+      "second_service": "تطوير مواقع",
+      "second_example": "تطوير مواقع كبيرة وصغيرة باستخدام تقنيات حديثة وبشكل ديناميكي",
+
+      "third_service": "أداء عالي",
+      "third_example": "ضمان أفضل أداء ممكن",
+
+      "fourth_service": "تصميم متجاوب",
+      "fourth_example": "يعمل على جميع الشاشات مثل الحواسيب والأجهزة اللوحية والهواتف والتلفزيونات",
+
+      "fifth_service": "عروض",
+      "fifth_example": "توجد عروض مستمرة طوال السنة حسب نوع الخدمة",
+
+      "sixth_service": "تصميم مواقع",
+      "sixth_example": "تصاميم مواقع حديثة مع بعض النصائح وسهلة التصفح",
+
+      "seventh_service": "خدمة العملاء",
+      "seventh_example": "نستجيب للطلبات التي نتلقاها بأسرع وقت ممكن",
+
+      "eighth_service": "رفع على السيرفر",
+      "eighth_example": "رفع المواقع على الإنترنت بتكلفة منخفضة وغالبًا مع عروض"
+    }
+  },
+  "form": {
+    "placeholder": {
+      "name": "الاسم",
+      "email": "البريد الإلكتروني",
+      "massege": "رسالتك..."
+    },
+    "send": "إرسال الرسالة"
+  },
+  "socials": {
+    "items": {
+      "first_social": "فيسبوك",
+      "first_content": "برمجة",
+      "first_posts": "0",
+
+      "second_social": "إنستغرام",
+      "second_content": "برمجة",
+      "second_posts": "5",
+
+      "third_social": "لينكدإن",
+      "third_content": "برمجة",
+      "third_posts": "0",
+
+      "fourth_social": "يوتيوب",
+      "fourth_content": "برمجة",
+      "fourth_posts": "0",
+
+      "fifth_social": "جيت هب",
+      "fifth_content": "برمجة",
+      "fifth_posts": "0",
+
+      "sixth_social": "واتساب",
+      "sixth_content": "برمجة",
+      "sixth_posts": "0",
+
+      "seventh_social": "تويتر",
+      "seventh_content": "برمجة",
+      "seventh_posts": "0",
+
+      "eighth_social": "ريديت",
+      "eighth_content": "برمجة",
+      "eighth_posts": "2"
+    },
+    "username": "اسم المستخدم",
+    "posts": "المنشورات",
+    "friends": "الأصدقاء",
+    "followers": "المتابعين",
+    "content": "المحتوى",
+    "visit": "زيارة"
+  },
+  "about": {
+    "fullname": "الاسم الكامل:",
+    "age": "العمر:",
+    "status": "الحالة:",
+    "status_now": "متاح للعمل",
+    "marital_status": "الحالة الاجتماعية:",
+    "marital_status_now": "أعزب",
+    "work": "الوظيفة:",
+    "work_now": "مطور واجهات أمامية",
+    "position": "الرتبة:",
+    "position_now": "مبتدئ",
+    "exp": "الخبرة:",
+    "skills": "المهارات:",
+    "years": "سنوات",
+    "months": "أشهر",
+    "days": "أيام"
+  },
+  "dashboard": {
+    "projectName": "عنوان المشروع:",
+    "developerName": "اسم المطور:",
+    "technologies": "التقنيات:",
+    "languages": "اللغات:",
+    "idea_source": "مصدر الفكرة:",
+    "rate": "التقييم (1 - 5):",
+    "visit_link": "رابط المعاينة:",
+    "disc": "الوصف:",
+    "select_image_here": "اختر الصورة من هنا",
+    "add": "إضافة المشروع"
+  },
+  "admin": {
+    "placeholder": {
+      "email": "البريد الإلكتروني:",
+      "pass": "كلمة المرور:"
+    },
+    "sign": "تسجيل الدخول، أنا المدير",
+    "ask": "هل أنت المدير؟"
+  },
+  "portfolio": {
+    "developer": "المطور:",
+    "source": "مصدر الفكرة:",
+    "type": "النوع:",
+    "disc": "الوصف:",
+    "techs": "التقنيات:",
+    "langs": "اللغات:",
+    "rate": "التقييم:"
+  }
+}
