@@ -33,7 +33,7 @@ const ContextProvider = ({ children }: ProviderProps) => {
     };
   });
 
-  const handleResize = (e) => {
+  const handleResize = () => {
     setIsMobile(window.innerWidth < 1040);
   };
 

@@ -37,8 +37,9 @@ const Styled_Socials = styled.div`
 const Socials = () => {
   const [data, setData] = useState<SocialInterface[] | []>([]);
 
+  const socialMedias = socialMedia as unknown as SocialInterface[];
   useEffect(() => {
-    setData(socialMedia);
+    setData(socialMedias);
   }, []);
   return (
     <Styled_Socials>

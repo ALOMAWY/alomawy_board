@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { icon, IconProp } from "@fortawesome/fontawesome-svg-core";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import {
   faBrush,
   faCircleDollarToSlot,
@@ -11,7 +11,7 @@ import {
   faPersonBreastfeeding,
   faServer,
   faShieldHalved,
-  IconLookup,
+  IconName,
 } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
 import servicesJSON from "../data/services.json";
@@ -85,7 +85,7 @@ const Styled_Service = styled.div`
 interface ServiceInterface {
   service: string;
   explain: string;
-  icon: IconProp;
+  icon: IconName;
 }
 
 const icons: { [key: string]: IconProp } = {
@@ -109,16 +109,18 @@ const Services = () => {
   return (
     <ServicesContainer>
       {data &&
-        data.map((serv, i) => (
-          <Service
-            key={i}
-            service={{
-              explain: serv.explain,
-              service: serv.service,
-              icon: icons[serv.icon],
-            }}
-          />
-        ))}
+        data.map((serv, i) => {
+          return (
+            <Service
+              key={i}
+              service={{
+                explain: serv.explain,
+                service: serv.service,
+                icon: serv.icon,
+              }}
+            />
+          );
+        })}
     </ServicesContainer>
   );
 };
@@ -136,7 +138,7 @@ const Service = ({ service }: ServiceProp) => {
     <Styled_Service>
       <div>
         <span className="icon">
-          <FontAwesomeIcon icon={service.icon} />
+          <FontAwesomeIcon icon={icons[service.icon]} />
         </span>
       </div>
       <div>

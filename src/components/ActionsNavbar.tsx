@@ -10,8 +10,8 @@ import styled from "styled-components";
 import { useMyContext } from "./Context";
 import Name from "./Name";
 import { useTranslation } from "react-i18next";
-import { useState } from "react";
 import { handleChangeLang, handleChangeTheme } from "../utils";
+import { getItemFromLocalStorage } from "../utils/localStorage";
 
 const Styled_Navbar = styled.nav``;
 
@@ -92,7 +92,13 @@ const ActionsNavbar = () => {
         <Buttons_List>
           <Navigation_Button
             className="theme-btn"
-            onClick={() => handleChangeTheme()}
+            onClick={() => {
+              const currentColor = getItemFromLocalStorage(
+                "theme-color",
+                "blue"
+              );
+              handleChangeTheme(currentColor);
+            }}
           >
             <button>
               <FontAwesomeIcon icon={faBrush} />

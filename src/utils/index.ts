@@ -1,7 +1,6 @@
-import { useTranslation } from "react-i18next";
 import { getItemFromLocalStorage, setItemInLocalStorage } from "./localStorage";
 
-export const handleChangeLang = (i18n: any) => {
+export const handleChangeLang = (i18n: any): void => {
   let lang: string = getItemFromLocalStorage("lang", "ar");
 
   if (lang == "ar") {
@@ -24,7 +23,7 @@ export const handleChangeLang = (i18n: any) => {
   console.log("Click", lang);
 };
 
-export const handleChangeTheme = (color: string) => {
+export const handleChangeTheme = (color: string): void => {
   const colors: string[] = ["blue", "purple", "green", "red", "orange"];
 
   const currentColor = getItemFromLocalStorage("theme-color", "blue");
@@ -90,7 +89,7 @@ export const handleChangeTheme = (color: string) => {
   }
 };
 
-export const calculate = (date: string) => {
+export const calculate = (date: string): string => {
   const myDate = new Date(date);
   const currentDate = new Date();
 

@@ -201,7 +201,7 @@ const TextArea = styled.section`
 `;
 
 const Landing = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const numbers = Object.keys(t("info.numbers", { returnObjects: true }));
   return (

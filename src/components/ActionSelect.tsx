@@ -1,4 +1,4 @@
-import { faBars, faPuzzlePiece } from "@fortawesome/free-solid-svg-icons";
+import { faPuzzlePiece } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 import { useMyContext } from "./Context";
@@ -46,9 +46,8 @@ const Styled_MenuButton = styled.button`
 `;
 
 const ActionSelect = () => {
-
   const { setIsOpen, isOpen, setIsList } = useMyContext();
-  
+
   return (
     <div
       onClick={(_) => {
