@@ -23,15 +23,20 @@ export const handleChangeLang = (i18n: any): void => {
   console.log("Click", lang);
 };
 
-export const handleChangeTheme = (color: string): void => {
+export const handleSetTheme = (color: string, change?: boolean): void => {
   const colors: string[] = ["blue", "purple", "green", "red", "orange"];
 
   const currentColor = getItemFromLocalStorage("theme-color", "blue");
+  let nextColor;
 
-  const nextColor: string =
-    colors[colors.indexOf(currentColor || color) + 1] || "blue";
+  if (change) {
+    nextColor = colors[colors.indexOf(currentColor) + 1] || "blue";
+  } else {
+    nextColor = color;
+  }
 
   setItemInLocalStorage("theme-color", nextColor);
+
 
   // document.body.style.backgroundImage = `url(./imgs/backgrounds/Background_${nextColor}.png)`;
   document.body.style.backgroundImage = `url("./backgrounds/Background_${nextColor}.png")`;

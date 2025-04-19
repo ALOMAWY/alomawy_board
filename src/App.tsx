@@ -15,7 +15,7 @@ import Socials from "./components/Socials";
 import About_Us from "./components/About_Us";
 import Dashboard from "./components/Dashboard";
 import { useSelector } from "react-redux";
-import { handleChangeTheme } from "./utils";
+import { handleSetTheme } from "./utils";
 import Portfolio from "./components/Portfolio";
 
 function App() {
@@ -58,7 +58,7 @@ function App() {
 
     const currentColor = getItemFromLocalStorage("theme-color", "blue");
 
-    handleChangeTheme(currentColor);
+    handleSetTheme(currentColor, false);
   }, []);
 
   return (

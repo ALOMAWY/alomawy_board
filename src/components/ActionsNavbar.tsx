@@ -10,7 +10,7 @@ import styled from "styled-components";
 import { useMyContext } from "./Context";
 import Name from "./Name";
 import { useTranslation } from "react-i18next";
-import { handleChangeLang, handleChangeTheme } from "../utils";
+import { handleChangeLang, handleSetTheme } from "../utils";
 import { getItemFromLocalStorage } from "../utils/localStorage";
 
 const Styled_Navbar = styled.nav``;
@@ -97,7 +97,7 @@ const ActionsNavbar = () => {
                 "theme-color",
                 "blue"
               );
-              handleChangeTheme(currentColor);
+              handleSetTheme(currentColor, true);
             }}
           >
             <button>

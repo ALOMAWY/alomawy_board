@@ -11,7 +11,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { handleChangeLang, handleChangeTheme } from "../utils";
+import { handleChangeLang, handleSetTheme } from "../utils";
 import { getItemFromLocalStorage } from "../utils/localStorage";
 
 const Styled_Menu = styled.div`
@@ -89,7 +89,7 @@ const Menu = () => {
                 "blue"
               );
 
-              handleChangeTheme(currentColor);
+              handleSetTheme(currentColor, true);
             }}
           >
             <button>
