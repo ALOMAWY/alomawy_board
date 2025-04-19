@@ -42,6 +42,10 @@ const Styled_Service = styled.div`
   animation-timeline: view(200px 40px);
   width: calc(100% - 1rem);
 
+  @media (max-width: 991px) {
+    width: 90%;
+  }
+
   & .icon {
     svg {
       font-size: 1.6rem;
@@ -78,7 +82,7 @@ const Styled_Service = styled.div`
     z-index: -1;
   }
   &:hover {
-    transform: scale(1.05) translate(10px);
+    transform: scale(1.05);
   }
 `;
 

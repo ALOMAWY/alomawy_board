@@ -8,9 +8,10 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 const Styled_Portfolio = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
   gap: 1rem;
   place-items: center;
+  margin: 2rem 0;
 `;
 
 const Portfolio = () => {
@@ -116,6 +117,7 @@ const Card = ({ project }: cardProps) => {
   }
 
   const StyledCard = styled.div`
+    width: 100%;
     height: 100%;
     border: 1px solid;
     color: #fff;
@@ -127,7 +129,11 @@ const Card = ({ project }: cardProps) => {
     box-shadow: 0 0 20px 1px ${color};
 
     &:hover {
-      scale: 1.06;
+      scale: 1.05;
+    }
+
+    @media (max-width: 991px) {
+      width: 90%;
     }
 
     h1 {

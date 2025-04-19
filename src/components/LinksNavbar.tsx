@@ -17,6 +17,7 @@ const Styled_LinksList = styled.ul`
   gap: 1rem;
   padding: 1rem;
   overflow: hidden;
+  border-bottom: 1px solid var(--main-color);
 
   li {
     color: #fff;

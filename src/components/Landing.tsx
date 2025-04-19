@@ -10,7 +10,7 @@ const LandingContainer = styled.div`
 
   @media (max-width: 991px) {
     flex-direction: column-reverse;
-    margin: 3rem;
+    margin: 3rem 1rem;
     gap: 2rem;
   }
 `;
@@ -21,17 +21,22 @@ const LogoSection = styled.div`
   align-items: center;
   gap: 75px;
 
+  @media (max-width: 991px) {
+    gap: 2.5rem;
+  }
+
   @media (min-width: 992px) {
     margin-right: 2rem;
   }
 `;
 
 const Name = styled.h1`
+  width: 100%;
   padding: 10px 20px;
+  margin: 0 1rem;
   border: 1px solid var(--main-color);
-  width: calc(100% + 50px);
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   background-image: linear-gradient(
     to left,
     var(--secondary-color),
@@ -42,6 +47,8 @@ const Name = styled.h1`
   -webkit-text-fill-color: transparent;
   animation: rotating-color linear infinite 5s;
   background-size: 500%;
+  background-color: var(--background-main-color);
+  backdrop-filter: blur(6px);
 `;
 
 const ImageLogo = styled.div`
@@ -56,6 +63,11 @@ const ImageLogo = styled.div`
 
   &:hover img {
     transform: scale(1.15) rotate(10deg);
+  }
+
+  @media (max-width: 991px) {
+    width: 50vw;
+    height: 50vw;
   }
 
   img {
@@ -73,15 +85,19 @@ const TextArea = styled.section`
   position: relative;
   color: var(--secondary-color);
 
-     @media (max-width: 991px) {
-   min-width:50%%;
-   max-width:100%;
-    }
+  @media (max-width: 991px) {
+    min-width: 50%%;
+    max-width: 100%;
+  }
 
   .discripton {
-     width: 100%;
-      position: relative;
-      padding: 10px 20px;
+    width: 100%;
+    position: relative;
+    margin: 1rem 0;
+
+    @media (max-width: 991px) {
+      padding: 10px 0;
+    }
 
     &:hover::before {
       width: 100%;
@@ -94,20 +110,19 @@ const TextArea = styled.section`
       background-color: var(--background-main-color);
       padding: 10px 20px;
       border-radius: 0;
-      margin-bottom: 10px;
+      margin-bottom: 1.5rem;
       text-transform: uppercase;
       width: fit-content;
 
-
-         @media (max-width: 991px) {
-      text-align: center;
-      width:100%;
-    }
+      @media (max-width: 991px) {
+        text-align: center;
+        width: 100%;
+      }
     }
 
     & p {
       letter-spacing: 3px;
-      line-height: 1.7;
+      line-height: 2;
       word-spacing: 2px;
       color: var(--secondary-color);
       position: relative;
@@ -119,11 +134,11 @@ const TextArea = styled.section`
       text-align: start;
       width: 100%;
 
-   @media (max-width: 991px) {
-      text-align: center;
-      line-height:2;
-    }
-      
+      @media (max-width: 991px) {
+        text-align: center;
+        line-height: 2;
+        font-size: 1rem;
+      }
     }
 
     &:hover {
@@ -187,17 +202,16 @@ const TextArea = styled.section`
         left: 0px;
       }
 
-         @media (max-width: 991px) {
-      text-align: center
+      @media (max-width: 991px) {
+        text-align: center;
+      }
     }
 
-    }
+    @media (max-width: 991px) {
+      max-width: 100%;
+      min-width: 100%;
+}
   
-
-  @media (max-width: 991px) {
-    max-width: 100%;
-    min-width: 100%;
-  }
 `;
 
 const Landing = () => {

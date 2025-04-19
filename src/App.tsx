@@ -126,8 +126,8 @@ function App() {
               element={<Holder>{user ? <Dashboard /> : <Dashboard />}</Holder>}
             />
           </Routes>
-          <Footer />
         </div>
+        <Footer />
       </BrowserRouter>
     </>
   );

@@ -20,6 +20,7 @@ const Styled_About_Us = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
+  backdrop-filter: blur(3px);
 
   @media (max-width: 800px) {
     flex-direction: column;
@@ -50,6 +51,7 @@ const Styled_About_Us = styled.div`
 
       div {
         width: 200px;
+        max-width: 40%;
 
         span {
           margin: 0 0.4rem;
@@ -58,67 +60,68 @@ const Styled_About_Us = styled.div`
       }
     }
   }
+`;
 
-  .animation-area {
-    width: 100%;
-    height: 100%;
-    position: relative;
+const AnimationArea = styled.div`
 
-    .animation-ball {
-      width: 60%;
-      height: 60%;
-      background-image: linear-gradient(
-        120deg,
-        var(--main-color),
-        var(--background-main-color)
-      );
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      opacity: 0.8;
-      box-shadow: 0 0 20px var(--background-main-color);
-      animation: ball-animation 20s linear infinite forwards;
+  width: 80vw;
+  height: 80vw;
+  position: relative;
+
+  .animation-ball {
+    width: 60%;
+    height: 60%;
+    background-image: linear-gradient(
+      120deg,
+      var(--main-color),
+      var(--background-main-color)
+    );
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.8;
+    box-shadow: 0 0 20px var(--background-main-color);
+    animation: ball-animation 20s linear infinite forwards;
+  }
+
+  @keyframes ball-animation {
+    0%,
+    100% {
+      border-radius: 50% 50% 50% 50% /50% 50% 50% 50%;
     }
-
-    @keyframes ball-animation {
-      0%,
-      100% {
-        border-radius: 50% 50% 50% 50% /50% 50% 50% 50%;
-      }
-      10% {
-        border-radius: 30% 20% 70% 10% /50% 80% 20% 10%;
-      }
-      20% {
-        border-radius: 20% 30% 80% 30% /60% 30% 40% 80%;
-        scale: 1.06;
-      }
-      30% {
-        border-radius: 50% 80% 10% 70% /20% 90% 80% 20%;
-        transform: translate(-50%, -50%) rotate(360deg);
-      }
-      40% {
-        border-radius: 90% 20% 50% 10% /70% 30% 10% 90%;
-      }
-      50% {
-        scale: 0.6;
-        border-radius: 30% 60% 10% 51% /35% 60% 70% 20%;
-      }
-      60% {
-        border-radius: 90% 40% 90% 30% /75% 20% 70% 0%;
-        transform: translate(-50%, -50%) rotate(0deg);
-      }
-      70% {
-        border-radius: 10% 80% 30% 80% /45% 30% 30% 50%;
-      }
-      80% {
-        scale: 1;
-        border-radius: 50% 80% 70% 60% /90% 90% 40% 90%;
-      }
-      90% {
-        border-radius: 10% 90% 10% 80% /90% 30% 70% 80%;
-        transform: translate(-50%, -50%) rotate(360deg);
-      }
+    10% {
+      border-radius: 30% 20% 70% 10% /50% 80% 20% 10%;
+    }
+    20% {
+      border-radius: 20% 30% 80% 30% /60% 30% 40% 80%;
+      scale: 1.06;
+    }
+    30% {
+      border-radius: 50% 80% 10% 70% /20% 90% 80% 20%;
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+    40% {
+      border-radius: 90% 20% 50% 10% /70% 30% 10% 90%;
+    }
+    50% {
+      scale: 0.6;
+      border-radius: 30% 60% 10% 51% /35% 60% 70% 20%;
+    }
+    60% {
+      border-radius: 90% 40% 90% 30% /75% 20% 70% 0%;
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    70% {
+      border-radius: 10% 80% 30% 80% /45% 30% 30% 50%;
+    }
+    80% {
+      scale: 1;
+      border-radius: 50% 80% 70% 60% /90% 90% 40% 90%;
+    }
+    90% {
+      border-radius: 10% 90% 10% 80% /90% 30% 70% 80%;
+      transform: translate(-50%, -50%) rotate(360deg);
     }
   }
 `;
@@ -245,9 +248,9 @@ const About_Us = () => {
         </div>
       </div>
 
-      <div className="animation-area">
+      <AnimationArea className="animation-area">
         <div className="animation-ball b-blur"></div>
-      </div>
+      </AnimationArea>
     </Styled_About_Us>
   );
 };

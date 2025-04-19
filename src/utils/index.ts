@@ -29,7 +29,7 @@ export const handleChangeTheme = (color: string): void => {
   const currentColor = getItemFromLocalStorage("theme-color", "blue");
 
   const nextColor: string =
-    color || colors[colors.indexOf(currentColor) + 1] || "blue";
+    colors[colors.indexOf(currentColor || color) + 1] || "blue";
 
   setItemInLocalStorage("theme-color", nextColor);
 

@@ -80,7 +80,7 @@ const Styled_Social = styled.div`
   border-radius: 10px;
 
   &:hover {
-    scale: 1.1;
+    scale: 1.05;
   }
 
   @media (max-width: 900px) {

@@ -282,7 +282,7 @@ const Contact_Us = () => {
             id="massage-area"
             placeholder={t("form.placeholder.massege")}
             cols={30}
-            rows={30}
+            rows={7}
             minLength={10}
             maxLength={500}
             required
