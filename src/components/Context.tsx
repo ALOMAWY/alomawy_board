@@ -13,6 +13,8 @@ type ContextType = {
   setIsMobile: React.Dispatch<React.SetStateAction<boolean>>;
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  newProject: boolean;
+  setNewProject: React.Dispatch<React.SetStateAction<boolean>>;
 };
 const Context = createContext<ContextType | undefined>(undefined);
 
@@ -24,6 +26,7 @@ const ContextProvider = ({ children }: ProviderProps) => {
   const [isList, setIsList] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1040);
   const [isOpen, setIsOpen] = useState(false);
+  const [newProject, setNewProject] = useState(false);
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
@@ -46,6 +49,8 @@ const ContextProvider = ({ children }: ProviderProps) => {
         setIsMobile,
         isOpen,
         setIsOpen,
+        newProject,
+        setNewProject,
       }}
     >
       {children}

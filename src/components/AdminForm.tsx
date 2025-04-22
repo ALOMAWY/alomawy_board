@@ -8,22 +8,26 @@ import { useDispatch } from "react-redux";
 
 const Styled_Form = styled.form`
   max-width: 500px;
-  margin:auto;
   flex: 1;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   gap:1rem;
   padding: 1rem;
   border: 1px dashed var(--main-color);
   backdrop-filter: blur(10px);
   background-color: #00000061;
-  box-shadow: 0 0 16px -3px var(--background-main-color);
+  box-shadow: 0 0 16px -3px var(--background-main-color);flex: 1;
 
+  @media (max-width: 768px) {
+    max-width: 100%;
+    
+  }
 
-h1{
-color:#fff;
-margin: 3rem auto;
-}
+  h1 {
+    color: #fff;
+    margin: 3rem auto;
+  }
 
   .input {
     display: flex;
@@ -115,38 +119,36 @@ const AdminForm = () => {
   };
 
   return (
-    <div style={{ height: "100%" }}>
-      <Styled_Form onSubmit={handleSign}>
-        <h1>{t("admin.ask")}</h1>
-        <div className="input">
-          <label htmlFor="email">
-            <FontAwesomeIcon icon={faUserTie} />
-          </label>
-          <input
-            type="text"
-            placeholder={t("admin.placeholder.email")}
-            id="email"
-            name="email"
-            required
-          />
-        </div>
-        <div className="input">
-          <label htmlFor="adminPass">
-            <FontAwesomeIcon icon={faKey} />
-          </label>
-          <input
-            type="password"
-            name="password"
-            placeholder={t("admin.placeholder.pass")}
-            id="adminPass"
-            required
-          />
-        </div>
-        <button type="submit" disabled={loading}>
-          {loading ? t("info.loading") : t("admin.sign")}
-        </button>
-      </Styled_Form>
-    </div>
+    <Styled_Form onSubmit={handleSign}>
+      <h1>{t("admin.ask")}</h1>
+      <div className="input">
+        <label htmlFor="email">
+          <FontAwesomeIcon icon={faUserTie} />
+        </label>
+        <input
+          type="text"
+          placeholder={t("admin.placeholder.email")}
+          id="email"
+          name="email"
+          required
+        />
+      </div>
+      <div className="input">
+        <label htmlFor="adminPass">
+          <FontAwesomeIcon icon={faKey} />
+        </label>
+        <input
+          type="password"
+          name="password"
+          placeholder={t("admin.placeholder.pass")}
+          id="adminPass"
+          required
+        />
+      </div>
+      <button type="submit" disabled={loading}>
+        {loading ? t("info.loading") : t("admin.sign")}
+      </button>
+    </Styled_Form>
   );
 };
 

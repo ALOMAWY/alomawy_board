@@ -18,7 +18,7 @@ const Styled_About_Us = styled.div`
   color: #fff;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding: 1rem;
 
   @media (max-width: 800px) {

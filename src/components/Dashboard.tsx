@@ -18,6 +18,7 @@ import styled from "styled-components";
 import { db } from "../lib/firebase";
 import { upload } from "../lib/upload";
 import Portfolio from "./Portfolio";
+import { useMyContext } from "./Context";
 
 const Styled_Form = styled.form`
   margin: 1rem 0 3rem;
@@ -144,6 +145,7 @@ const Styled_Form = styled.form`
 
 const Dashboard = () => {
   const { t } = useTranslation();
+  const { newProject, setNewProject } = useMyContext();
 
   const languages = ["arabic", "english"];
   const technologies = [
@@ -171,8 +173,6 @@ const Dashboard = () => {
   ];
 
   const [uploadingImage, setUploadingImage] = useState(false);
-
-  const [uploading, setUploading] = useState(false);
 
   const [loading, setLoading] = useState(false);
   const [range, setRange] = useState("20");
@@ -251,6 +251,8 @@ const Dashboard = () => {
       techs,
       type,
     }));
+
+    console.log(projectData);
   };
 
   const handleRange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -261,20 +263,18 @@ const Dashboard = () => {
 
   const handleAdd = async (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setLoading(true);
 
     try {
       await addDoc(collection(db, "projects"), {
         ...projectData,
       });
       e.target.reset();
-      setUploading(true);
+      setNewProject((prev) => !prev);
     } catch (error) {
       console.error(error);
       setError(true);
     } finally {
       setLoading(false);
-      setUploading(false);
     }
   };
 
@@ -716,8 +716,12 @@ const Dashboard = () => {
         </div>
 
         {error && <div className="err-input">Check To All Inputs Fields</div>}
-        <button type="submit" disabled={loading}>
-          {loading ? t("info.loading") + "..." : t("dashboard.add")}
+        <button type="submit" disabled={loading || uploadingImage}>
+          {uploadingImage
+            ? t("dashboard.uploadingImage")
+            : loading
+            ? t("info.loading") + "..."
+            : t("dashboard.add")}
         </button>
       </Styled_Form>
       <>

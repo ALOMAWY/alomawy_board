@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { db } from "../lib/firebase";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { useMyContext } from "./Context";
 
 const Styled_Portfolio = styled.div`
   display: grid;
@@ -34,6 +35,7 @@ const Styled_Portfolio = styled.div`
 
 const Portfolio = () => {
   const [projects, setProjects] = useState<ProjectData[]>([]);
+  const { newProject } = useMyContext();
 
   const handleFetchingData = async () => {
     try {
@@ -43,7 +45,7 @@ const Portfolio = () => {
 
       quarySnapshot.forEach((e) => data.push(e.data() as ProjectData));
 
-      setProjects(data);
+      setProjects(data);  
     } catch (error) {
       console.log(error);
     }
@@ -51,7 +53,8 @@ const Portfolio = () => {
 
   useEffect(() => {
     handleFetchingData();
-  }, [projects.length]);
+    console.log(newProject);
+  }, [newProject]);
 
   return (
     <>

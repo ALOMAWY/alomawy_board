@@ -18,6 +18,8 @@ import { useSelector } from "react-redux";
 import { handleSetTheme } from "./utils";
 import Portfolio from "./components/Portfolio";
 import ScrollToTop from "./components/ScrollToTop";
+import AdminForm from "./components/AdminForm";
+import { useMyContext } from "./components/Context";
 
 function App() {
   const [headerSize, setHeaderSize] = useState<{
@@ -29,16 +31,17 @@ function App() {
   const user = useSelector(
     (state: { admin: { user: true | null } }) => state.admin.user
   );
-  // Test--
 
-  const [inMobileSize] = useState(window.innerWidth < 992);
+  const { isMobile } = useMyContext();
+  // Test--
 
   const headerRef = useRef<HTMLDivElement>(null);
 
   const Holder = styled.div`
-    min-height: ${!inMobileSize ? `calc(100vh - ${headerSize.height}px)` : ""};
-    height: 100%;
-    // height: ${!inMobileSize ? `calc(100vh - ${headerSize.height}px)` : ""};
+    min-height: ${!isMobile
+      ? `calc(100vh - ${headerSize.height}px)`
+      : "min-content"};
+    // height: 100%;
   `;
 
   useEffect(() => {
@@ -126,7 +129,17 @@ function App() {
             />
             <Route
               path="/dash"
-              element={<Holder>{user ? <Dashboard /> : <Dashboard />}</Holder>}
+              element={
+                <Holder
+                  style={{
+                    minHeight: `calc(100vh - ${headerSize.height}px) `,
+                    display: "flex",
+                    justifyContent: "center",
+                  }}
+                >
+                  {user ? <Dashboard /> : <AdminForm />}
+                </Holder>
+              }
             />
           </Routes>
         </div>

@@ -4,6 +4,7 @@ import {
   faInstagram,
   faLinkedin,
   faTwitter,
+  faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
 import {
   faEnvelope,
@@ -34,7 +35,7 @@ const Styled_Footer = styled.footer`
 
     @media (max-width: 768px) {
       flex-direction: column;
-      height: 100vh;
+      min-height: 100vh;
       width: 100%;
       padding: 1rem;
 
@@ -57,9 +58,14 @@ const Styled_Footer = styled.footer`
 
     .image {
       margin-top: 2rem;
-      width: 10rvw;
+      width: 10vw;
       width: 10vw;
       border-radius: 50%;
+
+      @media (max-width: 768px) {
+        width: 50vw;
+        height: 50vw;
+      }
       img {
         width: 100%;
         height: 100%;
@@ -245,7 +251,10 @@ const Footer = () => {
               <FontAwesomeIcon icon={faEnvelope} />
             </span>
             <p>
-              <a href="mailto:sinanbey.jad@gmail.com">
+              <a
+                style={{ textTransform: "lowercase" }}
+                href="mailto:aldabbas333abdalrahman@gmail.com"
+              >
                 aldabbas333abdalrahman@gmail.com
               </a>
             </p>
@@ -273,17 +282,22 @@ const Footer = () => {
               </a>
             </li>
             <li>
+              <a href="https://wa.me/+9005526427352">
+                <FontAwesomeIcon icon={faWhatsapp} size="2x" />
+              </a>
+            </li>
+            <li>
               <a href="https://www.linkedin.com/in/abdalrahman-aldabbas-50a7a4242/">
                 <FontAwesomeIcon icon={faLinkedin} size="2x" />
               </a>
             </li>
             <li>
-              <a href="https://www.twitter.com/sinanbey.jad/">
+              <a href="https://twitter.com/alomawy_code_99">
                 <FontAwesomeIcon icon={faTwitter} size="2x" />
               </a>
             </li>
             <li>
-              <a href="https://github.com/sinanbey-jad">
+              <a href="https://github.com/ALOMAWY">
                 <FontAwesomeIcon icon={faGithub} size="2x" />
               </a>
             </li>
