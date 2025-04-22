@@ -12,7 +12,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { addDoc, collection } from "firebase/firestore";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import { db } from "../lib/firebase";
@@ -170,15 +170,21 @@ const Dashboard = () => {
     "zustand",
   ];
 
+  const [uploadingImage, setUploadingImage] = useState(false);
+
+  const [uploading, setUploading] = useState(false);
+
   const [loading, setLoading] = useState(false);
-  const [range, setRange] = useState("0");
+  const [range, setRange] = useState("20");
   const [type, setType] = useState("website");
   const [techs, setTechs] = useState<string[]>(["html", "css", "javascript"]);
   const [langs, setLangs] = useState<string[]>(["english"]);
-  const [image, setImage] = useState<{ file: null | File; url: "" | string }>({
+  const [image, setImage] = useState<{ file: null | File; url: unknown | "" }>({
     file: null,
     url: "",
   });
+
+  const [error, setError] = useState(false);
 
   const [projectData, setProjectData] = useState({
     title: "",
@@ -196,15 +202,19 @@ const Dashboard = () => {
   const handleImage = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
+      setUploadingImage(true);
       try {
         const imageURL = await upload(file);
 
         setImage({
           file: file,
-          url: imageURL as string,
+          url: imageURL,
         });
+        setProjectData((prev) => ({ ...prev, image: imageURL }));
       } catch (error) {
         console.error(error);
+      } finally {
+        setUploadingImage(false);
       }
     }
   };
@@ -230,8 +240,6 @@ const Dashboard = () => {
       }
     } else if (name == "type") {
       setType(e.target.value);
-      console.log(e.target.value);
-      console.log(e);
     } else {
       setProjectData((prev) => ({ ...prev, [name]: value }));
     }
@@ -254,21 +262,30 @@ const Dashboard = () => {
   const handleAdd = async (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
+
     try {
       await addDoc(collection(db, "projects"), {
         ...projectData,
       });
+      e.target.reset();
+      setUploading(true);
     } catch (error) {
       console.error(error);
+      setError(true);
     } finally {
       setLoading(false);
-      e.target.reset();
+      setUploading(false);
     }
+  };
+
+  const handleReset = () => {
+    setImage({ file: null, url: "" });
+    setRange("20");
   };
 
   return (
     <div>
-      <Styled_Form onSubmit={handleAdd}>
+      <Styled_Form onSubmit={handleAdd} onReset={handleReset}>
         <div className="input">
           <label htmlFor="title">
             <FontAwesomeIcon icon={faSignature} />
@@ -622,6 +639,7 @@ const Dashboard = () => {
             id="rate"
             style={{ opacity: "0", height: "50px" }}
             onChange={handleRange}
+            value={"20"}
           />
           <div
             style={{
@@ -638,13 +656,15 @@ const Dashboard = () => {
                 width: range + "%",
                 height: "100%",
                 background:
-                  +range > 75
+                  +range > 80
                     ? "green"
-                    : +range > 50
+                    : +range > 60
+                    ? "yellow"
+                    : +range > 40
+                    ? "blue"
+                    : +range > 20
                     ? "red"
-                    : +range > 25
-                    ? "purple"
-                    : "blue",
+                    : "orange",
               }}
             ></div>
           </div>
@@ -664,26 +684,38 @@ const Dashboard = () => {
               style={{
                 color: "var(--main-color)",
                 width: "fit-content",
-                textDecoration: "underline",
+                textDecoration: !uploadingImage ? "underline" : "none",
               }}
             >
-              {t("dashboard.select_image_here")}
+              {uploadingImage
+                ? t("dashboard.uploadingImage")
+                : image.url
+                ? t("dashboard.change_image_here")
+                : t("dashboard.select_image_here")}
             </span>
           </label>
           <img
-            src={image.url}
+            src={(image.url as string) || "./assets/project-placeholder.png"}
             alt="Image"
-            style={{ width: "200px", height: "100px" }}
+            style={{
+              width: "200px",
+              height: "100px",
+              opacity: image.url ? "1" : "0.5",
+            }}
           />
           <input
             style={{ display: "none" }}
             type="file"
             placeholder="Image URL"
+            name="image"
             id="image"
             required
             onChange={handleImage}
+            disabled={uploadingImage}
           />
         </div>
+
+        {error && <div className="err-input">Check To All Inputs Fields</div>}
         <button type="submit" disabled={loading}>
           {loading ? t("info.loading") + "..." : t("dashboard.add")}
         </button>

@@ -28,6 +28,7 @@ const Styled_Socials = styled.div`
   place-items: center;
   height: 100%;
   gap: 1rem 2rem;
+  margin: 2rem 0;
 
   @media (max-width: 900px) {
     gap: 1rem 0.3rem;

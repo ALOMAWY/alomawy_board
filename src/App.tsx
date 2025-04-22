@@ -17,6 +17,7 @@ import Dashboard from "./components/Dashboard";
 import { useSelector } from "react-redux";
 import { handleSetTheme } from "./utils";
 import Portfolio from "./components/Portfolio";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const [headerSize, setHeaderSize] = useState<{
@@ -36,7 +37,8 @@ function App() {
 
   const Holder = styled.div`
     min-height: ${!inMobileSize ? `calc(100vh - ${headerSize.height}px)` : ""};
-    height: ${!inMobileSize ? `calc(100vh - ${headerSize.height}px)` : ""};
+    height: 100%;
+    // height: ${!inMobileSize ? `calc(100vh - ${headerSize.height}px)` : ""};
   `;
 
   useEffect(() => {
@@ -71,6 +73,7 @@ function App() {
             <Header />
             <Paths />
           </div>
+          <ScrollToTop />
           <Routes>
             <Route
               path="/"

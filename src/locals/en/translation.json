@@ -132,6 +132,8 @@
     "visit_link": "Visit Link :",
     "disc": "Discription :",
     "select_image_here": "Select Image Here",
+    "change_image_here": "Change Image Here",
+    "uploadingImage": "Uploading ...",
     "add": "Add Project"
   },
   "admin": {

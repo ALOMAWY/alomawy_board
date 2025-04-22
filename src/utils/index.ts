@@ -122,3 +122,7 @@ export const calculate = (date: string): string => {
     ? `${years}-Years , ${months}-Months, ${days}-Days `
     : `${years} سنة و ${months} أشهر و ${days} يوم `;
 };
+
+
+
+

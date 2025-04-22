@@ -18,9 +18,8 @@ const Styled_About_Us = styled.div`
   color: #fff;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 1rem;
-  backdrop-filter: blur(3px);
 
   @media (max-width: 800px) {
     flex-direction: column;
@@ -34,6 +33,7 @@ const Styled_About_Us = styled.div`
     border: 1px dashed var(--background-main-color);
     box-shadow: 0 0 42px -5px var(--main-color);
     border: 1px solid var(--main-color);
+    backdrop-filter: blur(3px);
 
     @media (max-width: 800px) {
       max-width: 100%;
@@ -63,10 +63,14 @@ const Styled_About_Us = styled.div`
 `;
 
 const AnimationArea = styled.div`
-
-  width: 80vw;
-  height: 80vw;
+  width: 20vw;
+  height: 20vw;
   position: relative;
+
+  @media (max-width: 800px) {
+    width: 80vw;
+    height: 80vw;
+  }
 
   .animation-ball {
     width: 60%;

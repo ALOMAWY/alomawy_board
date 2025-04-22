@@ -20,9 +20,10 @@ const Styled_Footer = styled.footer`
   backdrop-filter: blur(6px);
   border: 1px solid var(--main-color);
   padding: 1rem;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 
   > .content {
     width: 100%;
@@ -54,12 +55,27 @@ const Styled_Footer = styled.footer`
       }
     }
 
+    .image {
+      margin-top: 2rem;
+      width: 10rvw;
+      width: 10vw;
+      border-radius: 50%;
+      img {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        border: 5px solid var(--main-color);
+        box-shadow: 0 0 10px 10px var(--background-main-color);
+      }
+    }
+
     div {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 3rem;
+      gap: 1rem;
       width: 30%;
       text-align: center;
 
@@ -81,7 +97,7 @@ const Styled_Footer = styled.footer`
           gap: 0.5rem;
         }
 
-        span {
+        > span {
           padding: 1rem;
           border: 2px solid var(--main-color);
           color: #000;
@@ -157,7 +173,7 @@ const Styled_Footer = styled.footer`
       display: flex;
       align-items: center;
       justify-content: space-around;
-      padding: 4rem;
+      padding: 0rem 4rem;
       @media (max-width: 768px) {
         flex-direction: column;
         gap: 1rem;
@@ -220,10 +236,8 @@ const Footer = () => {
               <FontAwesomeIcon icon={faLocationDot} />
             </span>
             <p>
-              <address>
-                <p>sinanbey.JAD</p>
-                <strong>Bursa ,Türkiye</strong>
-              </address>
+              <span>sinanbey.JAD</span>
+              <strong>Bursa ,Türkiye</strong>
             </p>
           </div>
           <div className="item">
@@ -238,6 +252,9 @@ const Footer = () => {
           </div>
         </div>
         <div className="info">
+          <div className="image">
+            <img src="./logos/newLogo.webp" alt="" />
+          </div>
           <h1>About My Website</h1>
           <p>
             This is a simple personal website built with React. It is a place

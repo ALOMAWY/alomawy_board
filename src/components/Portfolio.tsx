@@ -8,7 +8,25 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 const Styled_Portfolio = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(calc((100% / 3) - 1rem), calc(100% / 3 - 1rem))
+  );
+
+  @media (max-width: 991px) {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(calc((100% / 2) - 1rem), calc(100% / 2 - 1rem))
+    );
+  }
+
+  @media (max-width: 668px) {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(calc((100% / 1) - 1rem), calc(100% / 1 - 1rem))
+    );
+  }
+
   gap: 1rem;
   place-items: center;
   margin: 2rem 0;
@@ -33,12 +51,29 @@ const Portfolio = () => {
 
   useEffect(() => {
     handleFetchingData();
-  }, []);
+  }, [projects.length]);
 
   return (
-    <Styled_Portfolio>
-      {projects && projects.map((project) => <Card project={project} />)}
-    </Styled_Portfolio>
+    <>
+      <Styled_Portfolio>
+        {projects &&
+          projects.map((project) => (
+            <Card key={project.disc} project={project} />
+          ))}
+      </Styled_Portfolio>
+      {projects.length == 0 && (
+        <h1
+          style={{
+            color: "#fff",
+            textAlign: "center",
+            width: "100%",
+            margin: "3rem 0",
+          }}
+        >
+          No projects Added Yet
+        </h1>
+      )}
+    </>
   );
 };
 
@@ -64,17 +99,101 @@ const Rate = ({ rate, color }: { rate: string; color: string }) => {
   return (
     <div>
       {[1, 2, 3, 4, 5].map((star) => (
-        <span>
+        <span key={star}>
           <FontAwesomeIcon
             icon={faStar}
-            color={star < rateFrom5 ? color : color + "40"}
+            color={star < rateFrom5 || star == 1 ? color : color + "40"}
           />
         </span>
       ))}
     </div>
   );
 };
+const StyledCard = styled.div`
+  width: 100%;
+  height: 100%;
+  border: 1px solid;
+  color: #fff;
+  backdrop-filter: blur(6px);
+  border-radius: 5px;
 
+  &:hover {
+    scale: 1.02;
+  }
+
+  @media (max-width: 991px) {
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+    margin: 15px;
+    text-transform: uppercase;
+  }
+
+  .image {
+    width: 80%;
+    margin: 15px auto;
+
+    img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 1px solid #ffffff50;
+      border-radius: 20px;
+    }
+  }
+
+  .infos {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    & .info {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      background: #00000035;
+
+      span {
+        &:nth-child(1) {
+          width: 38%;
+        }
+        &:nth-child(2) {
+          width: 62%;
+        }
+      }
+
+      .scroll {
+        padding-bottom: 5px;
+        overflow-x: auto;
+        white-space: nowrap;
+        text-transform: uppercase;
+
+        span {
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+
+  .visit {
+    display: block;
+    width: 50%;
+    text-align: center;
+
+    border-radius: 20px;
+    padding: 10px;
+    margin: 1rem auto;
+
+    &:hover {
+      opactiy: 0.5;
+      button {
+        letter-spacing: 5px;
+      }
+    }
+  }
+`;
 const Card = ({ project }: cardProps) => {
   const { t } = useTranslation();
 
@@ -116,95 +235,18 @@ const Card = ({ project }: cardProps) => {
       break;
   }
 
-  const StyledCard = styled.div`
-    width: 100%;
-    height: 100%;
-    border: 1px solid;
-    color: #fff;
-    backdrop-filter: blur(6px);
-    background: ${color}30;
-    border-color: ${color};
-    text-shadow: ${color} 0 0 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 20px 1px ${color};
-
-    &:hover {
-      scale: 1.05;
-    }
-
-    @media (max-width: 991px) {
-      width: 90%;
-    }
-
-    h1 {
-      font-size: 1.2rem;
-      margin: 15px;
-    }
-
-    .image {
-      width: 80%;
-      margin: 15px auto;
-
-      img {
-        width: 100%;
-        aspect-ratio: 16 / 9;
-        border: 1px solid #ffffff50;
-        border-radius: 20px;
-      }
-    }
-
-    .infos {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-
-      & .info {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        padding: 10px;
-        background: #00000035;
-
-        span {
-          width: 50%;
-        }
-
-        .scroll {
-          padding-bottom: 5px;
-          overflow-x: auto;
-          white-space: nowrap;
-          text-transform: uppercase;
-
-          span {
-            text-transform: uppercase;
-          }
-        }
-      }
-    }
-
-    .visit {
-      display: block;
-      width: 50%;
-      text-align: center;
-      border: 1px dashed ${color};
-      border-radius: 20px;
-      padding: 10px;
-      margin: 1rem auto;
-
-      &:hover {
-        background: ${color}40;
-        button {
-          letter-spacing: 5px;
-        }
-      }
-    }
-  `;
-
   return (
-    <StyledCard>
+    <StyledCard
+      style={{
+        boxShadow: `0 0 20px 1px ${color}`,
+        background: color + "30",
+        borderColor: color,
+        textShadow: ` ${color} 0 0 10px`,
+      }}
+    >
       <h1>{title}</h1>
       <div className="image">
-        <img src={image} alt="Project" />
+        <img src={image || "./assets/project-placeholder.png"} alt="Project" />
       </div>
 
       <div className="infos">
@@ -220,7 +262,7 @@ const Card = ({ project }: cardProps) => {
 
         <div className="info">
           <span>{t("portfolio.source")}</span>
-          <span>{source}</span>
+          <span className="itrable scroll">{source}</span>
         </div>
 
         <div className="info">
@@ -232,7 +274,7 @@ const Card = ({ project }: cardProps) => {
           <span>{t("portfolio.techs")}</span>
           <span className="itrable scroll">
             {techs.map((e) => (
-              <span> {e} ,</span>
+              <span key={e}> {e} ,</span>
             ))}
           </span>
         </div>
@@ -241,7 +283,7 @@ const Card = ({ project }: cardProps) => {
           <span>{t("portfolio.langs")}</span>
           <div className="itrable scroll">
             {langs.map((e) => (
-              <span> {e} </span>
+              <span key={e}> {e} </span>
             ))}
           </div>
         </div>
@@ -254,7 +296,11 @@ const Card = ({ project }: cardProps) => {
         </div>
       </div>
 
-      <a href={visit} className="visit">
+      <a
+        href={visit}
+        style={{ border: `1px dashed ${color}` }}
+        className="visit"
+      >
         <button>Visit</button>
       </a>
     </StyledCard>

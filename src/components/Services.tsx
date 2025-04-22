@@ -24,6 +24,7 @@ const ServicesContainer = styled.div`
   height: 100%;
   align-content: center;
   gap: 1rem;
+  margin: 2rem 0;
 `;
 const Styled_Service = styled.div`
   position: relative;
@@ -37,7 +38,7 @@ const Styled_Service = styled.div`
   padding: 10px;
   transition: 0.2s;
   backdrop-filter: blur(5px);
-  margin: 7px;
+
   animation: serv 3s linear;
   animation-timeline: view(200px 40px);
   width: calc(100% - 1rem);
