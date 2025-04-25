@@ -49,7 +49,7 @@ const Styled_About_Us = styled.div`
         border-bottom: 1px solid #fff;
       }
 
-      div {
+      > div:first-child {
         width: 200px;
         max-width: 40%;
 

@@ -41,7 +41,10 @@ function App() {
     min-height: ${!isMobile
       ? `calc(100vh - ${headerSize.height}px)`
       : "min-content"};
-    // height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   `;
 
   useEffect(() => {
