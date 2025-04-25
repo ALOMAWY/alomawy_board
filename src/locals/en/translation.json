@@ -151,6 +151,15 @@
     "disc": "Discription :",
     "techs": "Technologies :",
     "langs": "Languages :",
-    "rate": "Rate :"
+    "rate": "Rate :",
+    "no_projects": "No Projects Added Yet",
+    "no_projects_with_category": "No Projects With Category {{category}}",
+    "category": {
+      "all": "All",
+      "website": "Website",
+      "game": "Game",
+      "simple": "Simple",
+      "dashboard": "Dashboard"
+    }
   }
 }

@@ -392,14 +392,14 @@ const Dashboard = () => {
             </div>
 
             <div className="type">
-              <label htmlFor="other">Others</label>
+              <label htmlFor="dashboard">Dashboard</label>
               <input
                 type="radio"
                 onChange={handleChange}
                 name="type"
-                id="other"
-                value="other"
-                checked={type == "other"}
+                id="dashboard"
+                value="dashboard"
+                checked={type == "dashboard"}
               />
             </div>
           </div>

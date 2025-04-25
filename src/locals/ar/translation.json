@@ -3,105 +3,105 @@
     "home": "الرئيسية",
     "services": "الخدمات",
     "portfolio": "الأعمال",
-    "contact_us": "تواصل معنا",
-    "about_us": "معلومات عنا",
+    "contact_us": "اتصل بنا",
+    "about_us": "من نحن",
     "social_media": "وسائل التواصل"
   },
   "info": {
     "welcome": "مرحباً بالجميع",
     "discription": {
-      "name": "أنا عبد الرحمن الدباس.",
-      "work": "أعمل كمطوّر واجهات أمامية.",
-      "from": "أنا من سوريا، دمشق.",
+      "name": "أنا عبدالرحمن الدباس.",
+      "work": "أعمل كمطور واجهات أمامية (Front-End).",
+      "from": "أنا من دمشق، سوريا.",
       "website": "هذا موقع شخصي بسيط.",
       "technoloji": "تم تطوير هذا الموقع باستخدام ReactJS."
     },
     "numbers": ["٠", "١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩", "١٠"],
-    "fullname": "عبد الرحمن الدباس",
-    "loading": "جار التحميل..."
+    "fullname": "عبدالرحمن الدباس",
+    "loading": "جارٍ التحميل..."
   },
   "path": {
     "home": "الرئيسية",
     "services": "الخدمات",
     "portfolio": "الأعمال",
-    "contact_us": "تواصل معنا",
-    "about_us": "معلومات عنا",
+    "contact_us": "اتصل بنا",
+    "about_us": "من نحن",
     "social_media": "وسائل التواصل",
-    "dash": "لوحة التحكم"
+    "dash": "لوحة الإدارة"
   },
   "services": {
     "items": {
       "first_service": "كود نظيف",
-      "first_example": "يُستخدم لتحسين الأداء، ويسهل تعديله في المستقبل",
+      "first_example": "يساعد على تحسين الأداء وسهولة التعديل لاحقاً.",
 
-      "second_service": "تطوير المواقع",
-      "second_example": "تطوير مواقع كبيرة وصغيرة باستخدام تقنيات حديثة وبشكل ديناميكي",
+      "second_service": "تطوير مواقع",
+      "second_example": "تطوير مواقع صغيرة وكبيرة باستخدام تقنيات حديثة وديناميكية.",
 
       "third_service": "أداء عالي",
-      "third_example": "ضمان أفضل أداء ممكن",
+      "third_example": "ضمان أفضل أداء ممكن للموقع.",
 
       "fourth_service": "تصميم متجاوب",
-      "fourth_example": "يعمل على جميع الشاشات مثل الكمبيوتر، التابلت، الجوال، والتلفاز",
+      "fourth_example": "يعمل على جميع الشاشات مثل الكمبيوترات والهواتف والأجهزة اللوحية والتلفاز.",
 
       "fifth_service": "عروض",
-      "fifth_example": "العروض مستمرة طوال العام حسب نوع الخدمة",
+      "fifth_example": "عروض مستمرة على مدار السنة حسب نوع الخدمة.",
 
       "sixth_service": "تصميم مواقع",
-      "sixth_example": "تصاميم مواقع حديثة مع بعض النصائح وسهلة التصفح",
+      "sixth_example": "تصميمات حديثة وسهلة الاستخدام.",
 
       "seventh_service": "خدمة العملاء",
-      "seventh_example": "نرد على الطلبات التي تصلنا بأسرع وقت ممكن",
+      "seventh_example": "نرد على الطلبات بأسرع وقت ممكن.",
 
-      "eighth_service": "رفع للموقع",
-      "eighth_example": "رفع المواقع على الإنترنت بتكلفة منخفضة وغالبًا مع عروض"
+      "eighth_service": "رفع على الخادم",
+      "eighth_example": "رفع المواقع على الإنترنت بتكلفة منخفضة مع عروض مستمرة."
     }
   },
   "form": {
     "placeholder": {
       "name": "الاسم",
       "email": "البريد الإلكتروني",
-      "massege": "رسالتك ..."
+      "massege": "اكتب رسالتك .."
     },
-    "send": "أرسل الرسالة"
+    "send": "إرسال الرسالة"
   },
   "socials": {
     "items": {
       "first_social": "فيسبوك",
       "first_content": "برمجة",
-      "first_posts": "0",
+      "first_posts": "٠",
 
-      "second_social": "انستغرام",
+      "second_social": "إنستغرام",
       "second_content": "برمجة",
-      "second_posts": "5",
+      "second_posts": "٥",
 
-      "third_social": "لينكدإن",
+      "third_social": "لينكد إن",
       "third_content": "برمجة",
-      "third_posts": "0",
+      "third_posts": "٠",
 
       "fourth_social": "يوتيوب",
       "fourth_content": "برمجة",
-      "fourth_posts": "0",
+      "fourth_posts": "٠",
 
       "fifth_social": "جيت هاب",
       "fifth_content": "برمجة",
-      "fifth_posts": "0",
+      "fifth_posts": "٠",
 
       "sixth_social": "واتساب",
       "sixth_content": "برمجة",
-      "sixth_posts": "0",
+      "sixth_posts": "٠",
 
       "seventh_social": "تويتر",
       "seventh_content": "برمجة",
-      "seventh_posts": "0",
+      "seventh_posts": "٠",
 
       "eighth_social": "ريديت",
       "eighth_content": "برمجة",
-      "eighth_posts": "2"
+      "eighth_posts": "٢"
     },
     "username": "اسم المستخدم",
     "posts": "المنشورات",
     "friends": "الأصدقاء",
-    "followers": "المتابعون",
+    "followers": "المتابعين",
     "content": "المحتوى",
     "visit": "زيارة"
   },
@@ -113,7 +113,7 @@
     "marital_status": "الحالة الاجتماعية :",
     "marital_status_now": "أعزب",
     "work": "العمل :",
-    "work_now": "مطوّر واجهات أمامية",
+    "work_now": "مطور واجهات أمامية",
     "position": "المنصب :",
     "position_now": "مبتدئ",
     "exp": "الخبرة :",
@@ -124,25 +124,25 @@
   },
   "dashboard": {
     "projectName": "عنوان المشروع :",
-    "developerName": "اسم المطوّر :",
-    "technologies": "التقنيات :",
-    "languages": "اللغات :",
+    "developerName": "اسم المطور :",
+    "technologies": "التقنيات المستخدمة :",
+    "languages": "اللغات المستخدمة :",
     "idea_source": "مصدر الفكرة :",
     "rate": "التقييم (1 - 5) :",
-    "visit_link": "رابط المعاينة :",
+    "visit_link": "رابط الزيارة :",
     "disc": "الوصف :",
     "select_image_here": "اختر صورة هنا",
-    "change_image_here": "تغيير الصورة هنا",
-    "uploadingImage": "جاري الرفع ...",
-    "add": "إضافة مشروع"
+    "change_image_here": "غيّر الصورة هنا",
+    "uploadingImage": "جارٍ رفع الصورة ...",
+    "add": "إضافة المشروع"
   },
   "admin": {
     "placeholder": {
       "email": "البريد الإلكتروني :",
       "pass": "كلمة المرور :"
     },
-    "sign": "تسجيل الدخول، أنا المسؤول",
-    "ask": "هل أنت المسؤول؟"
+    "sign": "تسجيل دخول المشرف",
+    "ask": "هل أنت المشرف؟"
   },
   "portfolio": {
     "developer": "المطور :",
@@ -151,6 +151,13 @@
     "disc": "الوصف :",
     "techs": "التقنيات :",
     "langs": "اللغات :",
-    "rate": "التقييم :"
+    "rate": "التقييم :",
+    "category": {
+      "all": "الكل",
+      "website": "مواقع ويب",
+      "game": "العاب",
+      "simple": "أعمال بسيطة",
+      "other": "أخرى"
+    }
   }
 }
