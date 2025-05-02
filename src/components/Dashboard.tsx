@@ -145,7 +145,7 @@ const Styled_Form = styled.form`
 
 const Dashboard = () => {
   const { t } = useTranslation();
-  const { newProject, setNewProject } = useMyContext();
+  const { setNewProject } = useMyContext();
 
   const languages = ["arabic", "english"];
   const technologies = [
@@ -173,7 +173,6 @@ const Dashboard = () => {
   ];
 
   const [uploadingImage, setUploadingImage] = useState(false);
-
   const [loading, setLoading] = useState(false);
   const [range, setRange] = useState("20");
   const [type, setType] = useState("website");
@@ -356,7 +355,7 @@ const Dashboard = () => {
 
           <div className="types">
             <div className="type">
-              <label htmlFor="website">Website</label>
+              <label htmlFor="website">{t("portfolio.category.website")}</label>
               <input
                 type="radio"
                 onChange={handleChange}
@@ -368,7 +367,7 @@ const Dashboard = () => {
             </div>
 
             <div className="type">
-              <label htmlFor="game">Game</label>
+              <label htmlFor="game">{t("portfolio.category.game")}</label>
               <input
                 type="radio"
                 onChange={handleChange}
@@ -380,7 +379,7 @@ const Dashboard = () => {
             </div>
 
             <div className="type">
-              <label htmlFor="simple">Simple</label>
+              <label htmlFor="simple">{t("portfolio.category.simple")}</label>
               <input
                 type="radio"
                 onChange={handleChange}
@@ -392,7 +391,9 @@ const Dashboard = () => {
             </div>
 
             <div className="type">
-              <label htmlFor="dashboard">Dashboard</label>
+              <label htmlFor="dashboard">
+                {t("portfolio.category.dashboard")}
+              </label>
               <input
                 type="radio"
                 onChange={handleChange}
@@ -400,6 +401,18 @@ const Dashboard = () => {
                 id="dashboard"
                 value="dashboard"
                 checked={type == "dashboard"}
+              />
+            </div>
+
+            <div className="type">
+              <label htmlFor="app">{t("portfolio.category.app")}</label>
+              <input
+                type="radio"
+                onChange={handleChange}
+                name="type"
+                id="app"
+                value="app"
+                checked={type == "app"}
               />
             </div>
           </div>

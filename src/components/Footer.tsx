@@ -18,13 +18,25 @@ import styled from "styled-components";
 
 const Styled_Footer = styled.footer`
   color: #fff;
-  backdrop-filter: blur(6px);
   border: 1px solid var(--main-color);
   padding: 1rem;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #00000090;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
 
   > .content {
     width: 100%;

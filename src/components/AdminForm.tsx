@@ -7,12 +7,12 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 
 const Styled_Form = styled.form`
-  max-width: 500px;
+  width: 100%;
   flex: 1;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  gap:1rem;
+  gap:2rem;
   padding: 1rem;
   border: 1px dashed var(--main-color);
   backdrop-filter: blur(10px);

@@ -1,11 +1,12 @@
 import { collection,  getDocs } from "firebase/firestore";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import { db } from "../lib/firebase";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { useMyContext } from "./Context";
+import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 const Styled_Portfolio = styled.div`
   display: grid;
@@ -13,8 +14,8 @@ const Styled_Portfolio = styled.div`
     auto-fit,
     minmax(calc((100% / 3) - 1rem), calc(100% / 3 - 1rem))
   );
-
   position: relative;
+  justify-content: center;
 
   @media (max-width: 991px) {
     grid-template-columns: repeat(
@@ -31,9 +32,7 @@ const Styled_Portfolio = styled.div`
   }
 
   gap: 1rem;
-  place-items: center;
   margin: 2rem 0;
-  min-height: 100vh;
 `;
 
 const Categories = styled.div`
@@ -55,10 +54,11 @@ const Categories = styled.div`
     gap: 1rem;
   }
 
+  @media (max-width: 485px) {
+    flex-wrap: wrap;
+    gap: 1rem;  
 
-  @media (max-width: 368px) {
-    gap: 0.5rem;
-  }
+}
 
 
   .category {
@@ -91,35 +91,46 @@ text-shadow: var(--main-color) -2px -2px 10px ;
 `;
 
 const NoItemsMessage = styled.h1`
+  width: fit-content;
   color: #fff;
   text-align: center;
-  width: 100%;
   margin: 3rem 0;
-  position: absolute;
   font-family: Arial, Helvetica, sans-serif;
   background: #00000035;
-  padding: 10px;
   border-radius: 10px;
   border: 1px solid var(--main-color);
   backdrop-filter: blur(5px);
   box-shadow: 0 0 10px 1px var(--main-color);
-  width: fit-content;
-  padding: 10rem;
+  padding: 5rem;
+  position: absolute;
   top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
 `;
 
 const Portfolio = () => {
-  const [projects, setProjects] = useState<ProjectData[]>([]);
   const { newProject } = useMyContext();
-  const [category, setCategory] = useState<string>("all");
   const { t } = useTranslation();
+
+  const [projects, setProjects] = useState<ProjectData[]>([]);
+
+  const [category, setCategory] = useState<string>("all");
   const categories = [
     { text: t("portfolio.category.all"), value: "all" },
     { text: t("portfolio.category.website"), value: "website" },
     { text: t("portfolio.category.game"), value: "game" },
     { text: t("portfolio.category.simple"), value: "simple" },
     { text: t("portfolio.category.dashboard"), value: "dashboard" },
+    { text: t("portfolio.category.app"), value: "app" },
   ];
+
+  const filterdProjects = useMemo(() => {
+    if (category === "all") {
+      return projects;
+    } else {
+      return projects.filter((pr) => pr.type == category);
+    }
+  }, [category, projects]);
 
   const handleFetchingData = async () => {
     try {
@@ -140,10 +151,11 @@ const Portfolio = () => {
   }, [newProject]);
 
   return (
-    <>
+    <div style={{ minHeight: "calc(100vh - 130px)" }}>
       <Categories className="categories">
         {categories.map((cate) => (
           <div
+            key={cate.value}
             className="category"
             style={{
               background: category == cate.value ? "var(--main-color)" : "",
@@ -153,23 +165,31 @@ const Portfolio = () => {
             {cate.text}
           </div>
         ))}
+        <div
+          className="category"
+          style={{
+            borderRadius: 0,
+            paddingRight: " 1rem",
+            paddingLeft: " 1rem",
+            borderLeft: "3px solid var(--main-color)",
+          }}
+        >
+          {filterdProjects.length < 9 ? 0 : ""}
+          {filterdProjects.length}
+        </div>
       </Categories>
       <Styled_Portfolio>
-        {category == "all" && projects.length ? (
-          projects.map((project) => (
+        {filterdProjects.length ? (
+          filterdProjects.map((project) => (
             <Card key={project.disc} project={project} />
           ))
-        ) : projects.filter((e) => e.type == category).length > 0 ? (
-          projects
-            .filter((e) => e.type == category)
-            .map((project) => <Card key={project.disc} project={project} />)
         ) : (
           <NoItemsMessage>
             {t("portfolio.no_projects_with_category", { category })}
           </NoItemsMessage>
         )}
       </Styled_Portfolio>
-    </>
+    </div>
   );
 };
 
@@ -185,6 +205,7 @@ interface ProjectData {
   rate: string;
   visit: string;
 }
+
 interface cardProps {
   project: ProjectData;
 }
@@ -207,7 +228,6 @@ const Rate = ({ rate, color }: { rate: string; color: string }) => {
 };
 const StyledCard = styled.div`
   width: 100%;
-
   border: 1px solid;
   color: #fff;
   backdrop-filter: blur(6px);
@@ -219,6 +239,7 @@ const StyledCard = styled.div`
 
   @media (max-width: 991px) {
     width: 90%;
+    margin: 0 auto;
   }
 
   h1 {
@@ -324,6 +345,10 @@ const Card = ({ project }: cardProps) => {
 
     case "dashboard":
       color = "#ff9800";
+      break;
+
+    case "app":
+      color = "#9c27b0";
       break;
 
     default:

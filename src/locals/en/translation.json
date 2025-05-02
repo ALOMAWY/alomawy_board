@@ -159,7 +159,8 @@
       "website": "Website",
       "game": "Game",
       "simple": "Simple",
-      "dashboard": "Dashboard"
+      "dashboard": "Dashboard",
+      "app": "App"
     }
   }
 }
