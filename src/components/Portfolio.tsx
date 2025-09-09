@@ -1,4 +1,4 @@
-import { collection,  getDocs } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
@@ -115,6 +115,7 @@ const Portfolio = () => {
   const [projects, setProjects] = useState<ProjectData[]>([]);
 
   const [category, setCategory] = useState<string>("all");
+
   const categories = [
     { text: t("portfolio.category.all"), value: "all" },
     { text: t("portfolio.category.website"), value: "website" },
@@ -367,7 +368,7 @@ const Card = ({ project }: cardProps) => {
     >
       <h1>{title}</h1>
       <div className="image">
-        <img src={image || "./assets/project-placeholder.png"} alt="Project" />
+        <img src={image && "./assets/project-placeholder.png"} alt="Project" />
       </div>
 
       <div className="infos">
